@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  font-family: "microsoft yahei", sans-serif;
+  background-color: #FEFEFE;
+  /*禁止选择文本*/
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#footer {
+  position: fixed;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 2.4rem;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+  z-index: 10;
+  .item {
+    display: inline-block;
+    width: 3.2rem;
+    height: 2.4rem;
+    color: #8c8c8c;
+    &:hover {
+      color: #CE4031;
+    }
+    .icon {
+      display: block;
+      margin: 0.2rem auto 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: url("../src/tabbar_icons.png") no-repeat 0 0;
+      background-size: 1000% auto;
+    }
+    p {
+      width: 100%;
+      height: 1rem;
+      margin-top: 1.2rem;
+      font-size: 0.6rem;
+      line-height: 1rem;
+      text-align: center;
+    }
+  }
+
+}
