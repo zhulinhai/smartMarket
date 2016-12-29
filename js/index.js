@@ -3,23 +3,29 @@
  */
 var listData = [
     {id:'0',name:'首页',percent:0, hoverPercent:11, isSelected: true},
-    {id:'1',name:'上新',percent:22.5, hoverPercent:33.5,isSelected: false},
+    {id:'1',name:'上新',percent:22, hoverPercent:33,isSelected: false},
     {id:'2',name:'海淘',percent:44.5, hoverPercent:55.5,isSelected: false},
-    {id:'3',name:'搜索',percent:66.9, hoverPercent:77.9,isSelected: false},
-    {id:'4',name:'个人中心',percent:89, hoverPercent:100,isSelected: false}
+    {id:'3',name:'搜索',percent:66.5, hoverPercent:77.5,isSelected: false},
+    {id:'4',name:'个人中心',percent:88.5, hoverPercent:99.5,isSelected: false}
 ];
 
 var MenuItem = React.createClass({
+    getInitialState: function() {
+       return {
+           colorNormal:'#676767',
+           colorHighlight: '#CE4031'
+       };
+    },
     handleClick: function(e) {
         var newData = this.props.data;
         newData.isSelected = true;
         this.props.changeItem(newData);
     },
     render: function () {
-        var color = '#8C8C8C';
+        var color = this.state.colorNormal;
         var iconPercent = this.props.data.percent;
         if (this.props.data.isSelected) {
-            color = '#CE4031';
+            color = this.state.colorHighlight;
             iconPercent = this.props.data.hoverPercent;
         }
         return (
