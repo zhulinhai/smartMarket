@@ -1,7 +1,9 @@
 /**
  * Created by zhulinhai on 16/12/29.
  */
-var typeList = [{id:'101',name:'首页'},
+
+var typeList = [
+    {id:'101',name:'首页'},
     {id:'102',name:'服饰箱包'},
     {id:'103',name:'食品饮料'},
     {id:'104',name:'家居生活'},
@@ -10,6 +12,19 @@ var typeList = [{id:'101',name:'首页'},
     {id:'107',name:'家纺家具'},
     {id:'108',name:'水果生鲜'},
     {id:'109',name:'美妆护肤'}];
+
+var itemList = [
+    {id:'1001',name:'显示秒杀',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/spike.png@750w_1l_50Q.webp'},
+    {id:'1002',name:'超级大牌',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/super_spike.png@750w_1l_50Q.webp'},
+    {id:'1003',name:'品质水果',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/subject_502.png@750w_1l_50Q.webp'},
+    {id:'1004',name:'爱逛街',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/subject_902.png@750w_1l_50Q.webp'},
+    {id:'1005',name:'电器城',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/subject_973.png@750w_1l_50Q.webp'},
+    {id:'1006',name:'9块9特卖',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/special99.png@750w_1l_50Q.webp'},
+    {id:'1007',name:'家居优品',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/furniture.png@750w_1l_50Q.webp'},
+    {id:'1008',name:'美食汇',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/food.png@750w_1l_50Q.webp'},
+    {id:'1009',name:'抽奖',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/lottery.png@750w_1l_50Q.webp'},
+    {id:'1010',name:'免费试用',image:'http://pinduoduoimg.yangkeduo.com/entrance/v2/3x/free_trial.png@750w_1l_50Q.webp'}
+];
 
 var SwiperItem = React.createClass({
     render: function() {
@@ -32,7 +47,6 @@ var Header = React.createClass({
             loop: false,
             slidesPerView: 5,
             slidesPerGroup: 1,
-            centeredSlides: true,
             slideToClickedSlide:true,
             followFinger: false,
             onTap: function(swiper) {
@@ -59,23 +73,69 @@ var Header = React.createClass({
 });
 
 var Content = React.createClass({
-    getInitialState: function() {
-        return {
-
-        }
-    },
     componentDidMount: function() {
 
     },
     render: function() {
+        var contentNodes = this
         return (
-            <div id="content">
+            <div id="content" className="rc-scroll-wrapper">
+                <div className="rc-scroll">
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                    <p>这里展示具体内容</p>
+                </div>
+                <div className="rc-scrollbar">
+                </div>
             </div>
         );
     }
 });
 
 var Page1 = React.createClass({
+    getInitialState: function() {
+        return {
+            myScroll: null
+        }
+    },
+    componentDidMount: function() {
+        var scaleRate = 20 * $(window).width()/320;
+        var contentHeight = $(window).height() - 4.4 * scaleRate -2;
+        $('#content').height(contentHeight).css({'marginTop': (scaleRate * 2 + 1) +'px'});
+    },
     render: function(){
         return(
             <div>
