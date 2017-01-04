@@ -77,10 +77,10 @@ var Content = React.createClass({
 
     },
     render: function() {
-        var contentNodes = this
+        var contentNodes = this;
         return (
-            <div id="content" className="rc-scroll-wrapper">
-                <div className="rc-scroll">
+            <div id="content" >
+                <div >
                     <p>这里展示具体内容</p>
                     <p>这里展示具体内容</p>
                     <p>这里展示具体内容</p>
@@ -117,8 +117,6 @@ var Content = React.createClass({
                     <p>这里展示具体内容</p>
                     <p>这里展示具体内容</p>
                     <p>这里展示具体内容</p>
-                </div>
-                <div className="rc-scrollbar">
                 </div>
             </div>
         );

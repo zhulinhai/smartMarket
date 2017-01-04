@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>我家商城</title>
+    <link rel="stylesheet" href="../sass/index.css">
+    <script type="text/javascript" src="../js/rem.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../bower_components/react/react.js"></script>
+    <script src="../bower_components/react/react-dom.js"></script>
+    <script src="../bower_components/react/browser.min.js"></script>
+    <script src="../bower_components/react/jquery.min.js"></script>
+    <script src="../bower_components/react/remarkable.min.js"></script>
+</head>
+<body>
+    <!-- 注册页面 -->
+    <div id="register">
+        <form>
+            <div class="contentFrame">
+                <input class="phoneNum" placeholder="手机号码">
+                <div class="line"></div>
+                <div><input class="phoneCode" placeholder="验证码"><button id="btnSend">发送验证码</button></div>
+            </div>
+            <p>我已阅读并同意<a href="">智能商城协议</a></p>
+            <div class="btnFrame">
+                <button id="btnLogin">登录</button>
+                <button id="btnBack">返回</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 首页 -->
+    <div class="page" id="page-1">
+    </div>
+    <!-- 上新 -->
+    <div class="page" id="page-2">
+
+    </div>
+    <!-- 海淘 -->
+    <div class="page" id="page-3">
+
+    </div>
+    <div id="footer"></div>
+    <script type="text/babel" src="../js/index.js"></script>
+    <script type="text/babel" src="../js/page1.js"></script>
+</body>
+</html>

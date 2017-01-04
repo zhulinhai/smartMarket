@@ -14,6 +14,6 @@
     doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
 
-document.addEventListener('touchmove',function(e){
-    e.preventDefault();
-}, false);
+//document.addEventListener('touchmove',function(e){
+//    e.preventDefault();
+//}, false);
