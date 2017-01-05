@@ -51,9 +51,11 @@ var MenuList = React.createClass({
             }
         });
         this.setState({data:newData});
+        document.getElementById('page-1').style.display = 'block';
     },
     componentWillMount: function() {
         this.setState({data:this.props.data});
+        document.getElementById('page-1').style.display = 'block';
     },
     render: function(){
         var menuNodes = this.state.data.map(function(node, index){

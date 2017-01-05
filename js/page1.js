@@ -77,7 +77,6 @@ var Content = React.createClass({
 
     },
     render: function() {
-        var contentNodes = this;
         return (
             <div id="content" >
                 <div >
@@ -131,7 +130,7 @@ var Page1 = React.createClass({
     },
     componentDidMount: function() {
         var scaleRate = 20 * $(window).width()/320;
-        var contentHeight = $(window).height() - 4.4 * scaleRate -2;
+        var contentHeight = $(window).height() - 4.2 * scaleRate -2;
         $('#content').height(contentHeight).css({'marginTop': (scaleRate * 2 + 1) +'px'});
     },
     render: function(){
