@@ -46,12 +46,14 @@ var MenuList = React.createClass({
         this.state.data.map(function(item, index){
             if (item.id == data.id) {
                 newData[index] = data;
+                console.log('page-' + newData.id);
+                document.getElementById('page-' + newData.id).style.display = 'block';
+                document.getElementById('page-' + data.id).style.display = 'none';
             } else {
                 newData[index].isSelected = false;
             }
         });
         this.setState({data:newData});
-        document.getElementById('page-1').style.display = 'block';
     },
     componentWillMount: function() {
         this.setState({data:this.props.data});

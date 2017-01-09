@@ -77,46 +77,17 @@ var Content = React.createClass({
 
     },
     render: function() {
+        var nodeList = this.props.data.map(function(item, index) {
+            return (
+                <div >
+                    <p>{item.name}</p>
+                </div>
+            )
+        });
+
         return (
             <div id="content" >
-                <div >
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                    <p>这里展示具体内容</p>
-                </div>
+                {nodeList}
             </div>
         );
     }
@@ -125,19 +96,20 @@ var Content = React.createClass({
 var Page1 = React.createClass({
     getInitialState: function() {
         return {
-            myScroll: null
+            contentList: null
         }
     },
-    componentDidMount: function() {
+    componentWillMount: function() {
         var scaleRate = 20 * $(window).width()/320;
         var contentHeight = $(window).height() - 4.2 * scaleRate -2;
         $('#content').height(contentHeight).css({'marginTop': (scaleRate * 2 + 1) +'px'});
+        this.state.contentList = itemList;
     },
     render: function(){
         return(
             <div>
                 <Header data={typeList} />
-                <Content />
+                <Content data={this.state.contentList} />
             </div>
         );
     }
