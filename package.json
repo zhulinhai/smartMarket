@@ -1,0 +1,11 @@
+{
+  "name": "smartMarket",
+  "version": "0.0.0",
+  "main": "js/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
+    "deploy": "NODE_EVN=production webpack -p"
+  },
+  "author": "",
+  "license": "ISC"
+}
